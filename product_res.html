@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHZONE | Products</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1120;
+            color: white;
+        }
+
+        header {
+            background: #111a2e;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h1 {
+            color: #00c8ff;
+            font-size: 28px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00c8ff;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .container h2 {
+            text-align: center;
+            color: #00c8ff;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #aab7cc;
+            margin-bottom: 35px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+            gap: 25px;
+            align-items: stretch;
+        }
+
+        .product-card {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #111a2e;
+            padding: 25px 20px;
+            border: 1px solid #253451;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .product-card img {
+            display: block;
+            width: 100%;
+            max-width: 260px;
+            height: 180px;
+            object-fit: contain;
+            margin: 0 auto 18px;
+        }
+
+        .product-card p {
+            flex-grow: 1;
+        }
+
+        .btn {
+            max-width: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+            border-color: #00c8ff;
+        }
+
+        .product-icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 21px;
+            color: #00c8ff;
+            margin-bottom: 12px;
+        }
+
+        .product-card p {
+            color: #aab7cc;
+            line-height: 1.6;
+            margin-bottom: 18px;
+            min-height: 52px;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #00c8ff;
+            color: #0b1120;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+        }
+
+        footer {
+            text-align: center;
+            background: #111a2e;
+            color: #aab7cc;
+            padding: 18px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 900px) {
+            header {
+                padding: 18px 5%;
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 16px;
+            }
+
+            .container {
+                width: 92%;
+                margin: 32px auto;
+            }
+
+            .products {
+                gap: 18px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            header {
+                padding: 16px 4%;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            nav {
+                width: 100%;
+                gap: 10px 16px;
+                font-size: 14px;
+            }
+
+            .container {
+                width: 92%;
+                margin: 26px auto;
+            }
+
+            .container h2 {
+                font-size: clamp(23px, 6vw, 28px);
+            }
+
+            .subtitle {
+                font-size: 14px;
+                line-height: 1.5;
+                margin-bottom: 24px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .product-card {
+                padding: 20px 16px;
+            }
+
+            .product-card img {
+                height: 160px;
+            }
+
+            .product-card p {
+                min-height: 0;
+            }
+
+            .price {
+                font-size: 20px;
+                margin-bottom: 16px;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 240px;
+            }
+
+            footer {
+                padding: 16px 10px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>TECHZONE</h1>
+
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- PRODUCTS -->
+    <div class="container">
+
+        <h2>Our Tech Products</h2>
+        <p class="subtitle">
+            Discover technology for your everyday needs.
+        </p>
+
+        <div class="products">
+
+        
+            <div class="product-card">
+                <img src="laptop.jpg" alt="Laptop">
+                <h3>Laptop</h3>
+                <p>Powerful laptops for studying, programming, work, and entertainment.</p>
+                <div class="price">₱25,000</div>
+                <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+
+            <div class="product-card">
+                <img src="phone.jpg" alt="Smartphone">
+                <h3>Smartphone</h3>
+                <p>Smartphones for communication, gaming, photography, and daily use.</p>
+                <div class="price">₱12,000</div>
+                <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+
+            <div class="product-card">
+                <img src="headp.jpg" alt="Headphones">
+                <h3>Headphones</h3>
+                <p>Enjoy music, online classes, and games with clear sound.</p>
+                <div class="price">₱1,000</div>
+                <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+
+           
+            <div class="product-card">
+                <img src="keyboard.jpg" alt="Keyboard">
+                <h3>Keyboard</h3>
+                <p>A reliable keyboard for typing, coding, gaming, and office tasks.</p>
+                <div class="price">₱800</div>
+                <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="mouse.jpg" alt="Computer mouse">
+                <h3>Computer Mouse</h3>
+                <p>A comfortable mouse for smooth navigation and everyday computer use.</p>
+                <div class="price">₱350</div>
+                <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+
+          
+            <div class="product-card">
+                <img src="moni.jpg" alt="Computer monitor">
+                <h3>Computer Monitor</h3>
+                <p>A clear display for work, school, gaming, and entertainment.</p>
+                <div class="price">₱5,500</div>
+                <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="print.jpgjpg" alt="">
+                <h3>Printer</h3>
+                <p>Print assignments, documents, reports, and photos with ease.</p>
+                <div class="price">₱3,500</div>
+                <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+
+            <div class="product-card">
+                <img src="cam.jpg.jpg" alt="">
+                <h3>Webcam</h3>
+                <p>A webcam for online meetings, classes, and video calls.</p>
+                <div class="price">₱1,200</div>
+                <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="speak.jpg" alt="">
+                <h3>Bluetooth Speaker</h3>
+                <p>Portable speakers for music, movies, and entertainment.</p>
+                <div class="price">₱900</div>
+                <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="flash.jpg" alt="">
+                <h3>USB Flash Drive</h3>
+                <p>Store and transfer files, school projects, and documents.</p>
+                <div class="price">₱250</div>
+                <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="power.jpg" alt="">
+                <h3>Power Bank</h3>
+                <p>Charge your devices while traveling, studying, or working.</p>
+                <div class="price">₱700</div>
+                <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="images.jpg" alt="">
+                <h3>Wi-Fi Router</h3>
+                <p>Connect your devices to a wireless network at home or work.</p>
+                <div class="price">₱1,500</div>
+                <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+
+          
+            <div class="product-card">
+                <img src="control.jpg" alt="">
+                <h3>Gaming Controller</h3>
+                <p>Enjoy your favorite games with comfortable gaming controls.</p>
+                <div class="price">₱1,200</div>
+                <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+
+           
+            <div class="product-card">
+                <img src="ex.jpg" alt="">
+                <h3>External Hard Drive</h3>
+                <p>Back up and store large files, photos, videos, and documents.</p>
+                <div class="price">₱3,000</div>
+                <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+
+           
+            <div class="product-card">
+                <img src="mic.jpg" alt="">
+                <h3>USB Microphone</h3>
+                <p>Record audio and improve voice quality for online calls.</p>
+                <div class="price">₱1,800</div>
+                <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+
+           
+            <div class="product-card">
+                <img src="watch.jpg" alt="">
+                <h3>Smartwatch</h3>
+                <p>Track daily activities, check notifications, and monitor fitness.</p>
+                <div class="price">₱2,500</div>
+                <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="ipa.jpg" alt="">
+                <h3>Tablet</h3>
+                <p>A portable device for reading, online classes, drawing, and entertainment.</p>
+                <div class="price">₱8,000</div>
+                <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+
+            
+            <div class="product-card">
+                <img src="hub.jpg" alt="">
+                <h3>USB-C Hub</h3>
+                <p>Connect multiple accessories and expand your laptop's connectivity.</p>
+                <div class="price">₱650</div>
+                <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+
+         
+            <div class="product-card">
+                <img src="action.jpg" alt="">
+                <h3>Action Camera</h3>
+                <p>Capture adventures, outdoor activities, and memorable moments.</p>
+                <div class="price">₱4,500</div>
+                <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+
+            <div class="product-card">
+                <img src="exter.jpg" alt="">
+                <h3>External SSD</h3>
+                <p>Store and transfer files quickly with a portable solid-state drive.</p>
+                <div class="price">₱2,800</div>
+                <a href="contact.html" class="btn">Inquire Now</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>JOHN REEVE CALMORIN</p>
+        <p>&copy; 2026 TECHZONE. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+
